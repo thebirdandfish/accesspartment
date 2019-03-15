@@ -1,0 +1,109 @@
+/**index.wxss**/
+
+
+.topTitle{
+    font-size: 14px;
+    background-color: #F8F8F8;
+    color: #1aad19;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: #1aad19 1px solid;
+}
+.topTitle .cn, .topTitle .en{
+    display: block;
+    text-align: center;
+    line-height: 16px;
+}
+.topTitle .en{
+    font-size: 12px;
+}
+
+
+
+.notice{
+    font-size: 13px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0rpx;
+    margin-bottom: 20rpx;
+}
+.notice .discribe{
+
+    width: 90%;
+    margin: 0 auto;
+      margin-top: 10rpx;
+    padding: 10px;
+    border: 2rpx solid grey;
+    color: grey;
+    line-height: 30rpx;
+}
+.pickList{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    background-color: #F8F8F8;
+    padding: 10px 0;
+}
+
+
+.moreAbout{
+    font-size: 14px;
+    border: 1px solid #1aad19;
+    display: block;
+    width: 90%;
+    line-height: 24px;
+    margin: 10px auto;
+    margin-top: 10rpx;  
+    text-align: center;
+    color: #1aad19;
+}
+
+.listItem{
+ 
+    height: 200px;
+    margin-bottom: 20px;
+     
+    font-size: 12px;
+    text-align: center;
+    display: block;
+  
+}
+.itemImg{
+    width: 360rpx;
+    height: 270rpx;
+}
+
+.itemText{
+  position:relative;
+  text-align: center;
+}
+.lessImportantText{
+  color:grey;
+  position: absolute;
+  left: 30rpx;
+}
+.veryImportantText{
+  color:black;
+    position: absolute;
+  right: 50rpx;
+}
+.container-index{
+    padding-bottom: 0px;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.pickList{
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #F8F8F8;
+}
+
+

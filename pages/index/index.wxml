@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<import src="../common/foot.wxml" />
+<!--文章列表模板 begin-->
+
+<template name="itmes">
+  <block wx:if="{{classtitle.length}}">
+    <view class="container-index">
+      <view class="topTitle">
+        <text class="cn">{{classtitle}}</text>
+        <text class="en">{{introtitle}}</text>
+      </view>
+        <view class="notice">
+          <view class="discribe">温馨提示:请使用二代身份证登记入住</view>
+        </view>
+    </view>
+  </block>
+  <view class="listItem">
+    <navigator url="../../pages/detail/detail?itemid={{itemid}}" hover-class="navigator-hover">
+      <image class="itemImg" src="{{img1}}" />
+      <view class="itemText">
+        <text class="lessImportantText">No.{{itemid}}\n会员价</text>
+        <text class="veryImportantText">{{itemtitle}}\n{{itemprice}}</text>
+      </view>
+    </navigator>
+  </view>
+</template>
+<!--文章列表模板 end-->
+
+<view class="pickList">
+  <!--循环输出列表 begin-->
+  <block wx:for="{{itemList}}" wx:key="{{itemtitle}}">
+    <template is="itmes" data="{{...item}}" />
+  </block>
+  <!--循环输出列表 end-->
+</view>
+
+<loading hidden="{{loadHidden}}" bindchange="loadChange">
+  数据加载中...
+</loading>
+
+
+<view bindtap="loadMore" data-lastid="{{lastid}}" data-isfrist="{{isfrist}}" class="moreAbout" style="display:{{moreHidden}}">加载更多</view>
+<toast hidden="{{toastHidden}}" bindchange="toastChange" duration="3000">{{msg}}</toast>
+<template is="foot" wx:if="{{footShowing}}"/>

@@ -1,0 +1,73 @@
+-<import src="../component/toast.wxml"/>
+<import src="../common/foot.wxml" />
+
+<scroll-view  class="container-detail" scroll-x='false'>
+  <template is="warn1" data="{{ toast1 }}"/>
+  <template is="warn2" data="{{ toast2 }}"/>
+
+  <view class="topTitle">
+    <text class="cn">{{classtitle}}</text>
+    <text class="en">{{introtitle}}</text>
+  </view>
+
+  <view class="lifeList">
+    <view class="lift-item" bindtap="goDetail">
+
+      <view class="link-shop">
+        <image class="shop-avater" src="../../images/play3.png"/>
+        <view class="shop-name">
+          <text class="title name">商品编号: {{info.itemid}}</text>
+          <text class="date name">{{info.itemtitle}}</text>
+          <text wx:if="{{info.itemprice}}" class="sale name">￥{{info.itemprice}}{{info.cTime}}</text>
+        </view>
+      </view>
+      <view class="item-text">{{info.content1}}</view>
+      <view>
+        <image class="item-image" src="{{info.img1}}"/>
+      </view>
+
+    </view>
+    <view class="more" bindtap="goCircle">店内小商品</view>
+  </view>
+
+  <view class="wrap">
+    <view class="sectionTitle">选择入住日期</view>
+        <view class="chooseDate">
+          <block>
+            <picker mode="date" value="{{HSdate.currentday}}" start="{{HSdate.startday}}" bindchange="bingDateChange" data-type='3' class="pickerLine">
+              <view class="startDate">
+                <text class="date">{{HSdate.date}}</text>
+                <text class="week">{{HSdate.week}}入住</text>
+              </view>
+            </picker>
+          </block>
+          <block>
+            <picker mode="date" value="{{HEdate.currentday}}" start="{{HEdate.startday}}" bindchange="bingDateChange" data-type='4' class="pickerLine">
+              <view class="endDate">
+                <text class="date">{{HEdate.date}}</text>
+                <text class="week">{{HEdate.week}}离店</text>
+              </view>
+            </picker>
+          </block>
+        </view>
+  </view>
+</scroll-view>
+
+    <button catchtap="formSubmit" class="sureBtn">确定</button>
+
+<view style="margin-bottom:100rpx">
+  <template is="foot" />
+</view>
+<view class="footer" >
+  <view class="add">
+    <button class="btn" type="primary" bindtap="primary">在线付款</button>
+  </view>
+  <view class="add1">
+    <button class="btn" type="primary" bindtap="primary" >到店付款</button>
+  </view>
+  <view class="add2">
+    <button class="btn" type="primary" bindtap="primary" plain="true">购物车</button>
+  </view>
+</view>
+
+

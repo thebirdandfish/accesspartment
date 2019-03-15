@@ -1,0 +1,71 @@
+<!--欢迎您 部分的view-->
+<view>
+  <view class="page-head">
+      <view class="page-head-title">{{title}} · 欢迎您</view>
+      <view class="page-head-line"></view>
+  </view>
+  <view class="about-wei">
+    <view class="about-content">{{intro1}}</view>
+    <view class="about-content">{{intro2}}</view>
+    <view class="about-content">{{intro3}}</view>
+  </view>
+</view>
+<!--地图部分的view-->
+<view>
+  <view class="page-head">
+      <view class="page-head-title">{{title}} · 找到我们</view>
+      <view class="page-head-line"></view>
+  </view>
+  <view>
+    <view wx:if="{{mappage}}" class="page-section-gap">
+        <view style="display:flex; flex-direction:row;">
+          <image class="streetguide-img-big" src="{{streetguideimg2}}"></image>
+        <view style="display:flex; flex-direction:column;">
+          <image class="streetguide-img-small" src="{{streetguideimg1}}"></image>
+          <image class="streetguide-img-small" src="{{streetguideimg3}}"></image>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="page-section-gap">
+     <map
+        id="myMap"
+        style="width: 100%; height: 500rpx;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        show-location
+      ></map>
+    </view>
+
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+            <view wx:if="{{mappage}}" class="weui-cell-left">
+                 <view class='weui-cell-left-text'>街景导航</view>
+                 <view class='weui-cell-right-text'>(点击切换至地图)</view>
+            </view>
+            <view wx:else class="weui-cell-left">
+                 <view class='weui-cell-left-text'>地图</view>
+                 <view class='weui-cell-right-text'>(点击切换至街景导航)</view>
+            </view>
+      </view>
+      <view class="weui-cell__ft">
+        <switch bindchange="switch1Change"/>
+      </view>
+    </view>
+    
+  </view>
+</view>
+
+
+ 
+<!--联系前台部分的view-->
+<view>
+  <view class="page-head">
+      <view class="page-head-title">{{title}} · 联系前台</view>
+      <view class="page-head-line"></view>
+  </view>
+  <view class="callmeat">
+    <view class="about-callme"><text>联系电话：</text></view>
+    <button class="mini-btn" type="primary" size="mini" bindtap='callme'>{{mobile}}</button>
+  </view>
+</view>

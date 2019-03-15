@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userinfo/userinfo",
+    "pages/news/news",
+    "pages/aboutaccess/aboutaccess",
+    "pages/mall/mall",
+    "pages/detail/detail",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "公寓",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon-reservation.png",
+        "selectedIconPath": "images/icon-reservation-selected.png",
+        "text": "预订"
+      },
+      {
+        "pagePath": "pages/aboutaccess/aboutaccess",
+        "iconPath": "images/location.png",
+        "selectedIconPath": "images/location-selected.png",
+        "text": "位置"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "iconPath": "images/icon-news.png",
+        "selectedIconPath": "images/icon-news-selected.png",
+        "text": "最新信息"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "iconPath": "images/icon-userinfo.png",
+        "selectedIconPath": "images/icon-userinfo-selected.png",
+        "text": "会员信息"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
